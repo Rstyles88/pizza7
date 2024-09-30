@@ -10,12 +10,13 @@ import Cart from './pages/Cart';
 import Pizza from './pages/Pizza';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
+<Router basename="/your-repo-name">pizza7</Router>
 
 function App() {
   const { token } = useContext(UserContext);  // Usa el contexto aquí
 
   return (
-    <Router>
+    <Router basename="/pizza7">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
