@@ -1,0 +1,25 @@
+.pizza-detail {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .pizza-detail img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .pizza-detail ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pizza-detail li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .pizza-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
