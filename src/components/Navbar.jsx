@@ -1,30 +1,38 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import UserContext from '../context/UserContext';
-import './Navbar.css';
+import './Navbar.css';  // Importar el CSS del Navbar
 
-function Navbar() {
+const Navbar = () => {
   const { token, logout } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');  // Redirige al login después de cerrar sesión
+  };
 
   return (
     <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
+      <div className="navbar-brand">
+        <Link to="/">Pizzeria Mamma Mia</Link>
+      </div>
+      <div className="navbar-links">
+        <Link to="/">Home</Link>
         {token ? (
           <>
-            <li><Link to="/profile">Profile</Link></li>
-            <li><button onClick={logout}>Logout</button></li>
+            <Link to="/profile">Profile</Link>
+            <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
           <>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/register">Register</Link></li>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </>
         )}
-        <li><Link to="/cart">🛒 Total</Link></li>
-      </ul>
+      </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

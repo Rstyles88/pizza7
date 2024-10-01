@@ -1,9 +1,25 @@
-.profile-page {
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .profile-page h2 {
-    margin-bottom: 1.5rem;
-  }
-  
+.profile-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.profile-container h1 {
+  font-size: 2rem;
+}
+
+.profile-container p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+button {
+  background-color: #f00;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c00;
+}

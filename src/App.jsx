@@ -10,13 +10,15 @@ import Cart from './pages/Cart';
 import Pizza from './pages/Pizza';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
-<Router basename="/your-repo-name">pizza7</Router>
 
 function App() {
   const { token } = useContext(UserContext);  // Usa el contexto aquí
 
+  // Define el basename dinámicamente
+  const basename = process.env.NODE_ENV === 'production' ? '/pizza7' : '/';
+
   return (
-    <Router basename="/pizza7">
+    <Router basename={basename}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
